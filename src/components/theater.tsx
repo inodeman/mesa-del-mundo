@@ -39,7 +39,7 @@ export function Theater() {
   const [listOpen, setListOpen] = useState(false);
   const [ficha, setFicha] = useState(false);
   const [copied, setCopied] = useState("");
-  const [clipOn, setClipOn] = useState(true);
+  const [clipOn, setClipOn] = useState(false);
 
   const playingRef = useRef(false);
   const timeRef = useRef(0);
