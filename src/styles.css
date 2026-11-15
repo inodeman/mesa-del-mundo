@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #100c09;
+  --color-surface: #1b1511;
+  --color-fg: #f4ead8;
+  --color-muted: #8d8174;
+  --color-primary: #e0a04a;
+  --color-accent: #c4492a;
+  --color-border: #3a3128;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --radius: 0.8rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(-2.2%, -1.2%, 0);
+  }
+}
+
+.still-drift {
+  animation: drift 80s linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .still-drift {
+    animation: none;
+  }
+}
